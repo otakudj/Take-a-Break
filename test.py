@@ -17,7 +17,7 @@ import win32event
 import sys
 
 # GUI
-class Wellnomics_Exercise():
+class Take_a_Break():
     def demo(self):
         def change_to_2():
             label.configure(image = exer2)
@@ -35,7 +35,7 @@ class Wellnomics_Exercise():
             seq = np.random.permutation(len(pics))
             for i in range(0, len(seq), 3):
                 top = Tk()
-                top.title('wellnomics_exercises')
+                top.title('Take a Break')
                 exer1 = PhotoImage(file = './pic_ch/' + pics[i])
                 exer2 = PhotoImage(file = './pic_ch/' + pics[i + 1])
                 exer3 = PhotoImage(file = './pic_ch/' + pics[i + 2])
@@ -45,23 +45,6 @@ class Wellnomics_Exercise():
                 button.pack()
                 top.mainloop()
                 time.sleep(random.randint(40, 50) * 60)
-                #time.sleep(5)
-
-# Service                
-# class Wellnomics_Exercises_Service(win32serviceutil.ServiceFramework):
-    # _svc_name_ = "Wellnomics_Exercises_Service"
-    # _svc_display_name_ = "The Everyday Wellnomics Exercises for Your Health"
-    # def __init__(self, args):
-        # win32serviceutil.ServiceFramework.__init__(self, args)   
-        # self.hWaitStop = win32event.CreateEvent(None, 0, 0, None)  
- 
-    # def SvcStop(self):
-        # self.ReportServiceStatus(win32service.SERVICE_STOP_PENDING)   
-        # win32event.SetEvent(self.hWaitStop)     
- 
-    # def SvcDoRun(self):
-        # Wellnomics_Exercise.demo()
  
 if __name__=='__main__':
-    #win32serviceutil.HandleCommandLine(Wellnomics_Exercises_Service) 
     Wellnomics_Exercise().demo()
