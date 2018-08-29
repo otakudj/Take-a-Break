@@ -55,6 +55,7 @@ class Take_a_Break():
                 # 按钮的动作
                 button = Button(top, text = "Next", command = change_to_2)
                 button.pack()
+                button.focus_set()
 
                 top.mainloop()
 
