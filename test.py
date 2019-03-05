@@ -33,7 +33,8 @@ class Take_a_Break():
         while 1:
             # 根据图片的数量，生成一个随机排列
             seq = np.random.permutation(len(pics))
-
+            print(seq)
+            
             # 24张图片，3个为一组
             for i in range(0, len(seq), 3):
         
@@ -44,9 +45,9 @@ class Take_a_Break():
                 top.title('Take a Break')
 
                 # 本次Break的三张图片
-                exer1 = PhotoImage(file = './pic_ch/' + pics[i])
-                exer2 = PhotoImage(file = './pic_ch/' + pics[i + 1])
-                exer3 = PhotoImage(file = './pic_ch/' + pics[i + 2])
+                exer1 = PhotoImage(file = './pic_ch/' + pics[seq[i]])
+                exer2 = PhotoImage(file = './pic_ch/' + pics[seq[i + 1]])
+                exer3 = PhotoImage(file = './pic_ch/' + pics[seq[i + 2]])
                 
                 # 显示exercise1的图片
                 label = Label(top, image = exer1)
@@ -60,7 +61,7 @@ class Take_a_Break():
                 top.mainloop()
 
                 # 结束一轮3个动作之后，40~50分钟之后进行下一组动作
-                time.sleep(random.randint(40, 50) * 60)
+                # time.sleep(random.randint(40, 50) * 60)
  
 if __name__=='__main__':
     Take_a_Break().demo()
