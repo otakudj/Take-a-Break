@@ -61,7 +61,7 @@ class Take_a_Break():
                 top.mainloop()
 
                 # 结束一轮3个动作之后，40~50分钟之后进行下一组动作
-                # time.sleep(random.randint(40, 50) * 60)
+                time.sleep(random.randint(40, 50) * 60)
  
 if __name__=='__main__':
     Take_a_Break().demo()
