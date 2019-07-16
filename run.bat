@@ -1,2 +1,2 @@
-pythonw D:/Project/wellnomics_exercises/test.py
+pythonw D:/Project/Exercises/test.py
 exit
