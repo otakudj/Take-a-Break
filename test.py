@@ -9,6 +9,8 @@ from tkinter import *
 import random
 import time
 
+PATH = 'D:\\OneDrive\\Exercises\\pic_ch\\'
+
 # GUI
 class Take_a_Break():
     def demo(self):
@@ -27,7 +29,7 @@ class Take_a_Break():
             top.destroy()
         
     # 读取pic_ch文件夹中的所有图片名称
-        pics = [pic for pic in os.listdir('./pic_ch/')]
+        pics = [pic for pic in os.listdir(PATH)]
 
         # 无限循环
         while 1:
@@ -45,9 +47,9 @@ class Take_a_Break():
                 top.title('Take a Break')
 
                 # 本次Break的三张图片
-                exer1 = PhotoImage(file = './pic_ch/' + pics[seq[i]])
-                exer2 = PhotoImage(file = './pic_ch/' + pics[seq[i + 1]])
-                exer3 = PhotoImage(file = './pic_ch/' + pics[seq[i + 2]])
+                exer1 = PhotoImage(file = PATH + pics[seq[i]])
+                exer2 = PhotoImage(file = PATH + pics[seq[i + 1]])
+                exer3 = PhotoImage(file = PATH + pics[seq[i + 2]])
                 
                 # 显示exercise1的图片
                 label = Label(top, image = exer1)
